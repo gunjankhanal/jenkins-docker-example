@@ -1,0 +1,20 @@
+pipeline {
+    agent {
+        dockerfile {
+            filename 'Dockerfile'  // Dockerfile is in the root of the repository
+            args '-v /tmp:/tmp'    // Optional: Add any extra arguments to the Docker build
+        }
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo "Building the application..."'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'echo "Running tests..."'
+            }
+        }
+    }
+}
