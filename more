@@ -1,4 +1,4 @@
-Multi-Stage Dockerfile
+########  Multi-Stage Dockerfile ########
 If you're using a multi-stage Dockerfile to optimize your build, you can also leverage that in Jenkins. For instance, you might want to use the final stage for your Jenkins agent:
 
 groovy
@@ -23,8 +23,9 @@ pipeline {
             }
         }
     }
-}
-Example 4: Using a Dockerfile in a Remote Repository
+} 
+
+#########  Using a Dockerfile in a Remote Repository ##############
 If your Dockerfile is stored in a remote repository (e.g., GitHub), you can clone the repository as part of your pipeline and then build the agent from that Dockerfile:
 
 groovy
@@ -55,7 +56,9 @@ pipeline {
         }
     }
 }
-Example 5: Dockerfile with Custom Network Configuration
+
+
+########## Dockerfile with Custom Network Configuration ############
 You can configure the container with custom networking options when you want to run your Docker agent in a specific network.
 
 groovy
@@ -81,7 +84,9 @@ pipeline {
         }
     }
 }
-Example 6: Reusing Docker Cache
+
+
+########## Reusing Docker Cache ##############
 When you want to speed up your builds by reusing the Docker build cache from a previous run, you can configure it as follows:
 
 groovy
