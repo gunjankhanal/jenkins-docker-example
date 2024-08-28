@@ -1,0 +1,22 @@
+pipeline {
+    agent {
+        dockerfile {
+            dir 'docker/agent'   // Dockerfile is located in 'docker/agent' directory
+            filename 'CustomDockerfile'  // Dockerfile is named 'CustomDockerfile'
+            additionalBuildArgs '--build-arg APP_ENV=production'  // Pass build args to Docker build
+            label 'docker'  // Optional: Specify a node label if required
+        }
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'echo "Building the application..."'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'echo "Running tests..."'
+            }
+        }
+    }
+}
